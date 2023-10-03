@@ -1,4 +1,4 @@
-#include "pnueli.h"
+#include "manna-pnueli.h"
 
 int main(int argc, char **argv) {
     pthread_t clients[NUM_THREADS], server;
@@ -38,12 +38,14 @@ void *Client(void *arg) {
             request = i;
         }
         //critical section
+        CriticalSection();
         if(soma > MAX_SUM) break;
         printf("Sum: %ld | Thread: %ld\n", soma, i);
-        CriticalSection();
 
         respond = 0;
     }
+
+    count_threads++;
     pthread_exit(NULL);
 }
 
@@ -53,6 +55,7 @@ void *Server(void *arg) {
         respond = request;
         while(respond != 0);
         request = 0;
+        if(count_threads == NUM_THREADS) break;
     }
     pthread_exit(NULL);
 }

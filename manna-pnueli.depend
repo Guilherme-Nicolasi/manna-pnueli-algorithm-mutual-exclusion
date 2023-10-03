@@ -1,5 +1,8 @@
 # depslib dependency file v1.0
-1696356877 source:/home/nicolasi/Development/manna-pnueli/manna-pnueli/main.c
+1696361496 source:/home/nicolasi/Development/manna-pnueli/manna-pnueli/manna-pnueli.c
+	"manna-pnueli.h"
+
+1696361594 /home/nicolasi/Development/manna-pnueli/manna-pnueli/manna-pnueli.h
 	<stdio.h>
 	<stdlib.h>
 	<stdbool.h>
