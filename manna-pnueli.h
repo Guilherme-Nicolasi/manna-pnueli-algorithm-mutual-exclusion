@@ -11,11 +11,8 @@
 #define NUM_THREADS 4
 
 long soma = 0;
-int request = 0, respond = 0;
-int count_threads = 0;
 
 void CriticalSection();
 void *Client(void *arg);
-void *Server(void *arg);
 
 #endif // PNUELI_H_INCLUDED
